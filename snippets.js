@@ -44,6 +44,19 @@ const formatApiDate = (date) => {
 
         return false;
     }
-  }
+}
   
-  console.log(formatApiDate("12/31/2014"));
+console.log(formatApiDate("12/31/2014"));
+
+// check for url parameters
+const urlParam = (name) => {
+    let results = new RegExp("[?&]" + name + "=([^&#]*)").exec(window.location.href);
+
+    if (results == null) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+console.log(urlParam("myParameter"));
